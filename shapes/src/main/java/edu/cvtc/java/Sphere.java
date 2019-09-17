@@ -9,9 +9,12 @@ public class Sphere extends Shape {
 	
 	// Constructor
 	public Sphere (float radius) {
+		if(radius <= 0) {
+			System.out.println("Please enter a positive value greater than 0!");
+		}else {
 		this.radius = radius;
+		}
 	}
-	
 	// Getter & Setter
 	public float getRadius() {
 		return radius;

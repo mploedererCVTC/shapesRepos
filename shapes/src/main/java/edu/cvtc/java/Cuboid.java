@@ -13,9 +13,14 @@ public class Cuboid extends Shape {
 	
 	// Constructor
 	public Cuboid (float width, float height, float depth) {
+		
+		if(width <=0 || height <= 0 || depth <=0) {
+			System.out.println("Please enter a positive value greater than 0!");
+		}else {
 		this.width = width;
 		this.height = height;
 		this.depth = depth;
+		}
 	}
 	
 	// Getters & Setters

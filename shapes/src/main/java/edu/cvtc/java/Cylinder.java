@@ -10,8 +10,13 @@ public class Cylinder extends Shape {
 	
 	// Constructor
 	public Cylinder (float radius, float height) {
+		
+		if(radius <= 0 || height <= 0) {
+			System.out.println("Please enter a positive value greater than 0!");
+		}else {
 		this.radius = radius;
 		this.height = height;
+		}
 	}
 	
 	// Getters & Setters

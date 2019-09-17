@@ -47,6 +47,10 @@ public void testCuboidCon() {
 	assertNotNull(cuboid1);
 }
 @Test
+public void testNot0Cub() {
+	assertTrue (cuboid1.getWidth() != 0 || cuboid1.getHeight() != 0 || cuboid1.getDepth() !=0 );
+}
+@Test
 public void testGetSurfaceArea() {
 	assertTrue (cuboid1.surfaceArea() == 52);
 }
@@ -86,6 +90,10 @@ public void testCylinderCon() {
 	assertNotNull(cylinder1);
 }
 @Test
+public void testNot0Cylinder() {
+	assertTrue (cylinder1.getRadius() != 0 || cylinder1.getHeight() != 0);
+}
+@Test
 public void testGetSurfaceAreaCyl() {
 	assertTrue (cylinder1.surfaceArea() == (float) ((2 * Math.PI * 2 * 3) + (2 * Math.PI *Math.pow(2, 2))));
 }
@@ -118,6 +126,10 @@ public void testGetRadiusSphere() {
 @Test
 public void testSphereCon() {
 	assertNotNull (sphere1);
+}
+@Test
+public void testNot0Sph() {
+	assertTrue (sphere1.getRadius() !=0 );
 }
 @Test
 public void testGetSurfaceAreaSph() {
