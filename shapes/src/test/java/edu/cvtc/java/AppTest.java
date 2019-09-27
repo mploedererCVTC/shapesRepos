@@ -14,19 +14,19 @@ public class AppTest
     //extends TestCase
 {
 	//Cuboids
-	Cuboid cuboid1 = new Cuboid(2,3,4);
-	Cuboid cuboid2 = new Cuboid(3,4,5);
-	Cuboid cuboid3 = new Cuboid(4,5,6);
+	Cuboid cuboid1 = new Cuboid(new MessageBox(),2,3,4);
+	Cuboid cuboid2 = new Cuboid(new MessageBox(),3,4,5);
+	Cuboid cuboid3 = new Cuboid(new MessageBox(),4,5,6);
 	
 	//Cylinders
-	Cylinder cylinder1 = new Cylinder(2,3);
-	Cylinder cylinder2 = new Cylinder(3,4);
-	Cylinder cylinder3 = new Cylinder(4,5);
+	Cylinder cylinder1 = new Cylinder(new MessageBox(),2,3);
+	Cylinder cylinder2 = new Cylinder(new MessageBox(),3,4);
+	Cylinder cylinder3 = new Cylinder(new MessageBox(),4,5);
 	
 	//Spheres
-	Sphere sphere1 = new Sphere(2);
-	Sphere sphere2 = new Sphere(3);
-	Sphere sphere3 = new Sphere(4);
+	Sphere sphere1 = new Sphere(new MessageBox(),2);
+	Sphere sphere2 = new Sphere(new MessageBox(),3);
+	Sphere sphere3 = new Sphere(new MessageBox(),4);
 	
 	
 @Test
@@ -154,6 +154,19 @@ public void testGetVolumeSph2() {
 @Test
 public void testGetVolumeSph3() {
 	assertTrue(sphere3.volume() == (float) ((4 / 3) * Math.PI * Math.pow(4, 3)));
+}
+
+@Test
+public void testJOptCub() {
+	assertTrue(cuboid1.getMessageBox().show("return0","Cuboid1test") == 0);
+}
+@Test
+public void testJOptCyl() {
+	assertTrue(cylinder1.getMessageBox().show("return0","Cylinder1test") == 0);
+}
+@Test
+public void testJOptSph() {
+	assertTrue(sphere1.getMessageBox().show("return0","Sphere1test") == 0);
 }
 
 }

@@ -1,8 +1,6 @@
 package edu.cvtc.java;
 
-import javax.swing.JOptionPane;
-
-public class Cuboid extends Shape {
+public class Cuboid extends Shape implements Renderer {
 
 	// Attributes
 	private float width = 0;
@@ -12,8 +10,8 @@ public class Cuboid extends Shape {
 	private float depth = 0;
 	
 	// Constructor
-	public Cuboid (float width, float height, float depth) {
-		
+	public Cuboid (Dialog messageBox, float width, float height, float depth) {
+		super(messageBox);
 		if(width <=0 || height <= 0 || depth <=0) {
 			System.out.println("Please enter a positive value greater than 0!");
 		}else {
@@ -48,7 +46,7 @@ public class Cuboid extends Shape {
 		this.depth = depth;
 	}
 	
-	// Methods for Calulations on  given shape
+	// Methods for Calculations on  given shape
 	@Override
 	public float surfaceArea() {
 		float surfaceArea = 2 * (depth * width) + 2 * (width * height) + 2 * (depth * height);
@@ -62,10 +60,11 @@ public class Cuboid extends Shape {
 		return volume;
 	}
 	
-	@Override
+	
 	public void render() {
-		
 		// Output Message for Cuboid
-		JOptionPane.showMessageDialog(null,"Cuboid Surface Area " + surfaceArea() + "Cuboid Volume " + volume(), "Cuboid Calculation", JOptionPane.INFORMATION_MESSAGE);
+		//JOptionPane.showMessageDialog(null,"Cuboid Surface Area " + surfaceArea() + "Cuboid Volume " + volume(), "Cuboid Calculation", JOptionPane.INFORMATION_MESSAGE);
+		Dialog messageBox = getMessageBox();
+		messageBox.show("Cuboid Surface Area " + surfaceArea() + "Cuboid Volume " + volume(), "Cuboid Calculation");
 	}
 }

@@ -1,14 +1,13 @@
 package edu.cvtc.java;
 
-import javax.swing.JOptionPane;
-
-public class Sphere extends Shape {
+public class Sphere extends Shape implements Renderer {
 	
 	// Attributes
 	private float radius = 0;
 	
 	// Constructor
-	public Sphere (float radius) {
+	public Sphere (Dialog messageBox, float radius) {
+		super (messageBox);
 		if(radius <= 0) {
 			System.out.println("Please enter a positive value greater than 0!");
 		}else {
@@ -24,7 +23,7 @@ public class Sphere extends Shape {
 		this.radius = radius;
 	}
 	
-	// Methods for Calulations on  given shape
+	// Methods for Calculations on  given shape
 	@Override
 	public float surfaceArea() {
 		
@@ -41,11 +40,13 @@ public class Sphere extends Shape {
 		return volume;
 	}
 	
-	@Override
+	
 	public void render() {
 		
-		//  Output Message for Sphere
-		JOptionPane.showMessageDialog(null,"Sphere Surface Area " + surfaceArea() + "Sphere Volume " + volume(), "Sphere Calculation", JOptionPane.INFORMATION_MESSAGE);
+		//  Output Message for Sphere  
+		//JOptionPane.showMessageDialog(null,"Sphere Surface Area " + surfaceArea() + "Sphere Volume " + volume(), "Sphere Calculation", JOptionPane.INFORMATION_MESSAGE);
+		Dialog messageBox = getMessageBox();
+		messageBox.show("Sphere Surface Area " + surfaceArea() + "Sphere Volume " + volume(), "Sphere Calculation");
 	}
 
 }

@@ -1,16 +1,16 @@
 package edu.cvtc.java;
 
-import javax.swing.JOptionPane;
 
-public class Cylinder extends Shape {
+
+public class Cylinder extends Shape implements Renderer {
 	
 	// Attributes
 	private float radius = 0;
 	private float height = 0;
 	
 	// Constructor
-	public Cylinder (float radius, float height) {
-		
+	public Cylinder (Dialog messageBox, float radius, float height) {
+		super(messageBox);
 		if(radius <= 0 || height <= 0) {
 			System.out.println("Please enter a positive value greater than 0!");
 		}else {
@@ -51,10 +51,12 @@ public class Cylinder extends Shape {
 		return volume;
 	}
 	
-	@Override
+	
 	public void render() {
+		Dialog messageBox = getMessageBox();
 		// Output Message for Cylinder
-		JOptionPane.showMessageDialog(null,"Cylinder Surface Area " + surfaceArea() + "Cylinder Volume " + volume(), "Cylinder Calculation", JOptionPane.INFORMATION_MESSAGE);
+		//JOptionPane.showMessageDialog(null,"Cylinder Surface Area " + surfaceArea() + "Cylinder Volume " + volume(), "Cylinder Calculation", JOptionPane.INFORMATION_MESSAGE);
+		messageBox.show("Cylinder Surface Area " + surfaceArea() + "Cylinder Volume " + volume(), "Cylinder Calculation");
 	}
 
 
