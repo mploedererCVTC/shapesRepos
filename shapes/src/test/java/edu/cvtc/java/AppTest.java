@@ -186,9 +186,5 @@ public void testSFCylinder() {
 public void testSFSphere() {
 	assertTrue(newShapeFactory.make(ShapeType.SPHERE) instanceof Sphere);
 }
-@Test
-public void testSF2DD() {
-	System.out.println(cuboid69.getMessageBox().show("mrnevins", "mykite"));
-	//assertTrue(cuboid69.getMessageBox() instanceof Cuboid);
-}
+
 }
