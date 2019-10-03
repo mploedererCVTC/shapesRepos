@@ -46,7 +46,7 @@ public class Sphere extends Shape implements Renderer {
 		//  Output Message for Sphere  
 		//JOptionPane.showMessageDialog(null,"Sphere Surface Area " + surfaceArea() + "Sphere Volume " + volume(), "Sphere Calculation", JOptionPane.INFORMATION_MESSAGE);
 		Dialog messageBox = getMessageBox();
-		messageBox.show("Sphere Surface Area " + surfaceArea() + "Sphere Volume " + volume(), "Sphere Calculation");
+		messageBox.show("Sphere Surface Area " + surfaceArea() + " Sphere Volume " + volume(), "Sphere Calculation");
 	}
 
 }

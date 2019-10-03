@@ -56,7 +56,7 @@ public class Cylinder extends Shape implements Renderer {
 		Dialog messageBox = getMessageBox();
 		// Output Message for Cylinder
 		//JOptionPane.showMessageDialog(null,"Cylinder Surface Area " + surfaceArea() + "Cylinder Volume " + volume(), "Cylinder Calculation", JOptionPane.INFORMATION_MESSAGE);
-		messageBox.show("Cylinder Surface Area " + surfaceArea() + "Cylinder Volume " + volume(), "Cylinder Calculation");
+		messageBox.show("Cylinder Surface Area " + surfaceArea() + " Cylinder Volume " + volume(), "Cylinder Calculation");
 	}
 
 

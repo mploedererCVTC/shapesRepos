@@ -65,6 +65,6 @@ public class Cuboid extends Shape implements Renderer {
 		// Output Message for Cuboid
 		//JOptionPane.showMessageDialog(null,"Cuboid Surface Area " + surfaceArea() + "Cuboid Volume " + volume(), "Cuboid Calculation", JOptionPane.INFORMATION_MESSAGE);
 		Dialog messageBox = getMessageBox();
-		messageBox.show("Cuboid Surface Area " + surfaceArea() + "Cuboid Volume " + volume(), "Cuboid Calculation");
+		messageBox.show("Cuboid Surface Area " + surfaceArea() + " Cuboid Volume " + volume(), "Cuboid Calculation");
 	}
 }

@@ -28,6 +28,12 @@ public class AppTest
 	Sphere sphere2 = new Sphere(new MessageBox(),3);
 	Sphere sphere3 = new Sphere(new MessageBox(),4);
 	
+	//Shape Factory
+	ShapeFactory newShapeFactory = new ShapeFactory(new MessageBox());
+	//Dialog Dependency
+	Dialog newDialogDep = new MessageBox();
+	Cuboid cuboid69 = new Cuboid(newDialogDep,2,3,4);
+	ShapeFactory newShapeFactory2 = new ShapeFactory(cuboid69.getMessageBox());
 	
 @Test
 //Cuboid Tests
@@ -168,5 +174,21 @@ public void testJOptCyl() {
 public void testJOptSph() {
 	assertTrue(sphere1.getMessageBox().show("return0","Sphere1test") == 0);
 }
-
+@Test
+public void testSFCuboid() {
+	assertTrue(newShapeFactory.make(ShapeType.CUBOID) instanceof Cuboid);
+}
+@Test
+public void testSFCylinder() {
+	assertTrue(newShapeFactory.make(ShapeType.CYLINDER) instanceof Cylinder);
+}
+@Test
+public void testSFSphere() {
+	assertTrue(newShapeFactory.make(ShapeType.SPHERE) instanceof Sphere);
+}
+@Test
+public void testSF2DD() {
+	System.out.println(cuboid69.getMessageBox().show("mrnevins", "mykite"));
+	//assertTrue(cuboid69.getMessageBox() instanceof Cuboid);
+}
 }
